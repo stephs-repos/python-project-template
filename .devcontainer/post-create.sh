@@ -19,19 +19,6 @@ if [ -d "$HOME/.gnupg" ]; then
 fi
 
 # ─────────────────────────────────────────────────────────────
-# Claude Code config symlink
-# Mount goes to ~/.claude-host, symlink ~/.claude points to it
-# This ensures Claude Code finds the config from your local profile
-# ─────────────────────────────────────────────────────────────
-echo "Linking Claude config..."
-
-if [ -d "$HOME/.claude-host" ]; then
-  rm -rf "$HOME/.claude" 2>/dev/null || true
-  ln -sf "$HOME/.claude-host" "$HOME/.claude"
-  echo "  Linked ~/.claude -> ~/.claude-host"
-fi
-
-# ─────────────────────────────────────────────────────────────
 # Install Claude Code CLI
 # ─────────────────────────────────────────────────────────────
 echo "Installing Claude Code..."
